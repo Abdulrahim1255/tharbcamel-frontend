@@ -1,0 +1,36 @@
+@import "../App.scss";
+
+.home-head{
+    height: 100vh;
+background-image:url('./tharbback.png');
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+text-align: center;
+overflow-y: scroll;
+
+h1{
+    font-size: 4em;
+    font-weight: 600;
+    margin-top: 3em;
+    color: $primary;
+    background-color: peachpuff;
+}
+.sub-head{
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #a1a1a1;
+}
+.content-div{
+    margin-top:15% !important;
+    width: 70%;
+    h2{
+        color: $primary;
+    }
+    p{
+        color: #a1a1a1;
+        line-height: 1.5;
+    }
+}
+}

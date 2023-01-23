@@ -1,0 +1,272 @@
+
+.report-pdf-2{
+    padding:2% 2% 2% 2%;
+    h1,h2,h3,h4,h5,p,span{
+        // font-family: 'Amiri Quran', serif !important;
+        // font-family: 'Mirza', cursive !important;
+        // font-family: 'Markazi Text', serif;
+        font-family: 'Mirza', cursive !important;
+        
+    }
+    .right{
+        text-align: right;
+        font-size: 1.8em;
+    }
+    .container-first{
+        img{
+            width: 50%;
+        }
+
+        .cont-2{
+            text-align: center;
+            h2{
+                text-decoration: underline;
+                font-size: 2em;
+            }
+        }
+        .cont-3{
+            text-align: right;
+            h3{
+                font-size: 1.9em;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .report-number-parent{
+        //border: 2px solid #ccc;
+        margin: 2% 0 !important;
+        border-radius: 5px;
+        width: 50%;
+        font-size: initial;
+        .report-number-child{
+            .value{
+            border: 2px solid black;
+            padding: 2%;
+            font-size: 1.5em;
+            font-weight: bold;
+            }
+            .key{
+            border: 2px solid black;
+            padding: 2%;
+            font-size: 1.5em;
+            }
+        }
+    }
+
+    .container-second{
+        text-align: right;
+        .bold-text{
+            font-weight: bold;
+            
+        }
+        p{
+            font-size: 2em;
+            margin: 0 !important;
+        }
+    }
+
+    .container-fourth{
+        margin: 4% 0 !important;
+        h1{
+            text-align: center;
+            font-size: 3em;
+        }
+        .row{
+            text-align: center;
+            .col-2{
+                border: 1px solid black;
+            }
+            .heading{
+                padding: 1%;
+            }
+            .heading-value{
+                background-color: #f7f7f7;
+                padding: 1%;
+            }
+        }
+    }
+
+    .container-fifth{
+        text-align: center;
+        .col-key{
+            border: 1px solid black;
+            padding: 10px;
+            h3{
+                font-size: 100%;
+            }
+        }
+        .col-value{
+            border: 1px solid black;
+            margin: 1% 0;
+            padding:4px;
+            font-weight: bold;
+            font-size: 100%;
+        }
+    }
+
+    .container-sixth{
+        text-align: right;
+        font-size: 20px;
+        .large-cont{
+            border: 2px solid black;
+            padding: 1%;
+        }
+    }
+    footer {
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+      
+      @page {
+        size: A4;
+        margin: 11mm 17mm 17mm 17mm;
+      }
+      
+      @media print {
+        footer {
+          position: fixed;
+          p{
+            text-align: center !important;
+        }
+          bottom: 0;
+        }
+      
+        .content-block, p {
+          page-break-inside: avoid;
+        }
+      
+        html, body {
+          width: 210mm;
+          height: 297mm;
+        }
+      }
+     
+    // footer {
+    //     font-size: 15px;
+    //     text-align: center;
+    //     padding-right: 10px;
+    //   }
+      
+    //   @page {
+    //     size: letter;
+    //     margin: .5in;
+    // }
+    
+    // @media print {
+    //     table.paging thead td, table.paging tfoot td {
+    //         height: .5in;
+    //     }
+    // }
+    
+    // header, footer {
+    //     width: 100%; height: .5in;
+    // }
+    
+    // header {
+    //     position: absolute;
+    //     top: 0;
+    // }
+    
+    // @media print {
+    //     header, footer {
+    //         position: fixed;
+    //     }
+        
+    //     footer {
+    //         bottom: 0;
+    //     }
+    // }
+
+}
+
+
+
+.border-head{
+    div{
+        border: 2px solid black;
+        text-align: center;
+        padding: 5px;
+    }
+}
+.report-pdf{
+    font-size: 1.2em;
+}
+.center-div{
+    margin: 2% 5% !important;
+    text-align: center;
+    h1{
+        padding: 2% 0;
+        font-size: 3em;
+    }
+    .table-head{
+        border-radius: 2px;
+        padding: 1%;
+        .table-child{
+        border: 2px solid black;
+        padding: 1%;
+        
+        }
+        p{
+            font-size: 1.2em;
+            background-color: #f7f7f7;
+            padding: 5px;
+        }
+    }
+}
+.dark-border{
+    border: 1px solid black !important;
+    text-align: center !important;
+    font-size: 19px;
+}
+.right-text{
+    font-weight: bold !important;
+    font-size: 1.2em;
+}
+
+.bottom-right-div{
+    text-align: right;
+    h1{
+        border: 1px solid black;
+        padding: 1%;
+    }
+}
+.myclass{
+    font-size: 2em !important;
+}
+.Mudir{
+    font-weight: bold;
+    display: flex;
+    font-size: 20px;
+    position: relative;
+    bottom: 19px;
+    left: 57px;
+
+}
+.mainDate{
+    font-weight: bold;
+}
+.bewasati::after{
+    content: ":";
+    width: 20px;
+    height: 20px;
+    position: relative;
+    right: 207px;
+}
+// tr{
+//     font-size: 19px;
+// }
+.mysapn{
+    font-size: 1.4em;
+     margin: 0 !important;
+}
+.second-col{
+    margin-top: 155px;
+}
+// .tashgili{
+//     font-size: 2em;
+//     box-sizing: border-box;
+// }
