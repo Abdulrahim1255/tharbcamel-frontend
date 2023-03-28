@@ -7,6 +7,7 @@ import { TextField,Button,IconButton } from '@mui/material'
 import TwoBDialog from '../utils/TwoBDialog'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import moment from 'moment'
 function PreviousReportsProject(props) {
   const [allReports,setAllReports] = React.useState([])
   const [searchText,setSearchText]=React.useState("")
@@ -58,7 +59,8 @@ function PreviousReportsProject(props) {
         <h1>Previous Project Reports</h1>
         <div className="search-bar-div row mb-5 mx-auto align-items-center">
           <div className="col-10">
-            <TextField onChange={(e)=>setSearchText(e.target.value)} variant='outlined'fullWidth id="outlined-basic" label="Enter Report Number" />
+          <TextField onChange={(e)=>setSearchText(e.target.value)} variant='outlined'fullWidth id="outlined-basic" label="Enter Report or Microship Number" />
+            <p className="mt-3">Microchip Search Sample: M-12345</p>
           </div>
           <div className="col-2">
             <Button onClick={()=>handleSearch()} variant="contained">Search</Button>
@@ -79,8 +81,8 @@ function PreviousReportsProject(props) {
               <tr key={index}>
               <td>{item.reportNumberString}</td>
               <td>{item.workOrder.initials}-P{item.workOrder.incrementalValue}</td>
-              <td>{item.createdAt}</td>
-              <td>{item.updatedAt}</td>
+              <td>{moment.parseZone(item.createdAt).local().format("DD/MM/YY hh:mm:ss A")}</td>
+              <td>{moment.parseZone(item.updatedAt).local().format("DD/MM/YY hh:mm:ss A")}</td>
               <td><IconButton onClick={()=>props.history.push("/tharbprojectgr",item)}><EditIcon /></IconButton></td>
               <td><IconButton onClick={()=>{
                 setOpen(true)

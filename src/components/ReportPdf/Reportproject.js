@@ -22,45 +22,39 @@ function Reportproject(props) {
                 <h3>مختبر مستشفى ذرب للهجن</h3>
             </div>
         </section>
-        <div class="row">
-    <div class="col-8">
-        {/* Frist Section Start Here */}
         <section className="report-number-parent">
             <div className="report-number-child row m-auto align-items-center ">
-                <div className="col-7 value ">
+                <div className="col-5 value ">
                     <p>{details.reportNumber}</p>
                 </div>
-                <div className="col-5 key ">
+                <div className="col-4 key ">
                     <p>
-                     تقرير رقم
+                    تقرير رقم
                     </p>
                 </div>
             </div>
 
             <div className="report-number-child row m-auto align-items-center ">
-                <div className="col-7 value">
+                <div className="col-5 value">
                     <p>{details.workOrder}</p>
                 </div>
-                <div className="col-5 key">
+                <div className="col-4 key">
                     <p className='tashgili'>  الرقم التشغيلي</p>
                 </div>
             </div>
 
             <div className="report-number-child row m-auto align-items-center">
-                <div className="col-7 value">
+                <div className="col-5 value">
                     <p>{details.mainDate}</p>
                 </div>
-                <div className="col-5 key">
+                <div className="col-4 key">
                     <p>
                     تاريخ الردود
                     </p>
                 </div>
             </div>
         </section>
-    </div>
-    <div class="col-4">
-        {/* Second Section Start Here / */}
-        <section className="container-second second-col">
+        <section className="third container-second">
         <div className="row m-auto justify-content-end">
                 <div className="mr-2">
                     <p className="bold-text"><span> {details.ownerName}</span> </p>
@@ -69,26 +63,19 @@ function Reportproject(props) {
                     <p className="bold-text"><span> //السيد</span> </p>
                 </div>
             </div>
-            {/* <p className="bold-text"><span>{details.ownerName}</span> //السيد</p> */}
-            
-        
-        </section>
-    </div>
-        </div>
-        <section className="third container-second">
-        <div className="row m-auto justify-content-end">
         <p>
                  <span className="">بفحص العينات الواردة الى معمل مستشفى ذرب للهجن بتاريخ</span>
                  <span className="bold-text mx-2">{details.mainDate}</span>
                  <span className="">و بياناتها كالتالى</span>
              </p>
-                <div className="col-4 key">
+        <div className="row m-auto justify-content-end">
+                <div className="col-5 key colfive">
                     <p>دم:</p>
                     <p className="bold-text">{details.sampleQuantity}:</p>
                     <p>الكشف عن اجسام مناعية للبروسيل:</p>
                     <p>الميكروبيولوجى:</p>
                 </div>
-                <div className="col-2 value">
+                <div className="col-3 value">
                     <p className="bold-text">نوع العينات</p>
                     <p className="bold-text">عدد العینات</p>
                     <p className="bold-text">الفحص المطلوب</p>
@@ -99,40 +86,46 @@ function Reportproject(props) {
 
         <section className="container-fourth">
         <h1>نتائج الفحص</h1>
-        <div className="row mt-5 mx-auto justify-content-center">
+        <div className="row  mx-auto justify-content-center">
             <div className="col-2 heading">              
-                <h3>السلبى</h3>
+                <h2>السلبى</h2>
             </div>
             <div className="col-2 heading">
-                <h3>المشتبه</h3>
+                <h2>المشتبه</h2>
             </div>
             <div className="col-2 heading">
-                <h3>الايجابى</h3>
+                <h2>الايجابى</h2>
             </div>
             <div className="col-2 heading">
-                <h3>العدد الاجمالى</h3>
+                <h2>بدون دم</h2>
+            </div>
+            <div className="col-2 heading">
+                <h2>العدد الاجمالى</h2>
             </div>
         </div>
         <div className="row m-auto justify-content-center row2">
             <div className="col-2 heading-value">
-                <h3>{details.negative.length}</h3>              
+                <h2>{details.negative.length}</h2>              
             </div>
             <div className="col-2 heading-value">
-            <h3>{details.suspect.length}</h3>
+            <h2>{details.suspect.length}</h2>
             </div>
             <div className="col-2 heading-value">
-            <h3>{details.positive.length}</h3>
+            <h2>{details.positive.length}</h2>
             </div>
             <div className="col-2 heading-value">
-            <h3>{details.negative.length+details.suspect.length+details.positive.length}</h3>
+            <h2>{details.noBlood.length}</h2>
+            </div>
+            <div className="col-2 heading-value">
+            <h2>{details.negative.length+details.suspect.length+details.positive.length+details.noBlood.length}</h2>
             </div>
         </div>
         </section>
 
-        <h2 style={{textAlign:"center"}}>تفاصيل الاختبار</h2>
+        <h1 className='tfasil' style={{textAlign:"center"}}>تفاصيل الاختبار</h1>
 
         {details.negative.length>0&&<>
-        <h3 className="right">NEGATIVE: السلبى</h3>
+        <h2 className="right">NEGATIVE: السلبى</h2>
         <table className="ui celled table dark-border">
         <thead >
             <tr><th className="dark-border" >م</th>
@@ -164,7 +157,7 @@ function Reportproject(props) {
         </>}
 
         {details.positive.length>0&&<>
-        <h3 className="right">POSITIVE: الايجابى</h3>
+        <h2 className="right">POSITIVE: الايجابى</h2>
         <table className="ui celled table dark-border">
         <thead>
             <tr><th className="dark-border">م</th>
@@ -197,7 +190,7 @@ function Reportproject(props) {
 
 
         {details.suspect.length>0&&<>
-        <h3 className="right">SUSPECT: المشتبه</h3>
+        <h2 className="right">SUSPECT: المشتبه</h2>
         <table className="ui celled table dark-border">
         <thead>
             <tr><th className="dark-border">م</th>
@@ -227,8 +220,42 @@ function Reportproject(props) {
         </tbody>
         </table>
         </>}
-
+        {details.noBlood.length>0&&<>
+         <h3 className="right">No Blood :بدون دم</h3>
+         <table className="ui celled table dark-border">
+         <thead>
+             <tr><th className="dark-border">م</th>
+             <th className="dark-border">رقم الرقبة</th>
+             <th className="dark-border">رقم المالك</th>
+             <th className="dark-border">رقم الشريحة</th>
+             <th className="dark-border">اسم الفحل</th>
+             
+             <th className="dark-border">Name</th>
+             {details.noBlood[0].bapat.length>0&&<th className="dark-border">BAPAT</th>}
+             {details.noBlood[0].bct.length>0&&<th className="dark-border">BCT</th>}
+             {details.noBlood[0].celisa.length>0&&<th className="dark-border">cElisa</th>}
+             <th className="dark-border">JUDGEMENT</th>
+         </tr></thead>
+         <tbody>
+         {
+          details.noBlood.map((item,index)=><tr>
+          <td className="dark-border" data-label="Name">{index+1}</td>
+          <td className="dark-border" data-label="Job">{item.neck}</td>
+          <td className="dark-border">{item.rakumalmalik}</td>
+          <td className="dark-border" data-label="Age">{item.microchip}</td>
+          <td className="dark-border"  data-label="Job">{item.bullname}</td>
+          <td className="dark-border" data-label="Job"></td>
+          {details.noBlood[0].bapat.length>0&&<td className="dark-border" data-label="Job">{item.bapat.toUpperCase()}</td>}
+          {details.noBlood[0].bct.length>0&&<td className="dark-border" data-label="Job">{item.bct.toUpperCase()}</td>}
+          {details.noBlood[0].celisa.length>0&&<td className="dark-border" data-label="Job">{item.celisa.toUpperCase()}</td>}
+          <td className="dark-border" data-label="Job">{item.judgement.toUpperCase()}</td>
+          </tr>)   
+         }
+         </tbody>
+         </table>
+         </>}
         <section className="container-sixth">
+        <p className='note'> Note:-Mean Optical density &gt;  30 "POSITIVE" &lt; 30 "NEGATIVE"</p>
             <p>OIE manual of terrestrial animals 2016 طرق الاختبار -</p>
             <p>­ إسناد القیاس: إسناد القیاس طبقا للنظام الدولي لوحدات القیاس باستخدام المعایرات والمواد المرجعیة
             </p>

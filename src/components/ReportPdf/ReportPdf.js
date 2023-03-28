@@ -1,237 +1,3 @@
-// import React from 'react'
-// import "./ReportPdf.scss"
-
-// function ReportPdf(props) {
-//     console.log(props)
-//     let details = props.location.state;
-//     React.useEffect(()=>{
-//         //window.print();
-//     },[])
-//   return (
-//     <div className="p-5 report-pdf">
-//         <div className='row m-auto'>
-//             <div className="col-4" style={{textAlign:"left"}} onClick={()=>props.history.push("/")}>
-//                 <img src="/tharblogo2.png" alt="tharb" />
-//             </div>
-//             <div className="col-4" style={{textAlign:"center"}}>
-//                 <h2>تقرير فحص عينات</h2>
-//             </div>
-//             <div className="col-4" style={{textAlign:"right"}}>
-//                 <h4>معمل مستشفى ذرب للهجن</h4>
-//             </div>
-//         </div>
-
-//         <div className="row mt-4 border-head">
-//             <div className="col-2">
-//                 {details.reportNumber}
-//             </div>
-//             <div className="col-1">
-//             تقرير رقم
-//             </div>
-//         </div>
-//         <div className="row my-auto border-head">
-//             <div className="col-2">
-//             {details.workOrderDate}
-//             </div>
-//             <div className="col-1">
-//             الرقم التشغيلي
-//             </div>
-//         </div>
-//         <div className="row my-auto border-head">
-//             <div className="col-2">
-//              {details.mainDate}
-//             </div>
-//             <div className="col-1">
-//              تاريخ الردود
-//             </div>
-//         </div>
-
-//         <div style={{textAlign:"right"}} className="right-text">
-//             <p> {details.ownerName} //السيد</p>
-//             <p>
-//                 <span>بفحص العينات الواردة الى معمل مستشفى ذرب للهجن بتاريخ</span>
-//                 <span>{details.date}</span>
-//                 <span>و بياناتها كالتالى</span>
-//             </p>
-//             <p>نوع العينات :دم</p>
-//             <p><span className="mr-1"><b>{details.sampleQuantity}</b></span>:عدد العينات</p>
-//             <p>الفحص المطلوب : الكشف عن اجسام مناعية للبروسيلا</p>
-//             <p>جهة الفحص :الميكروبيولوجي</p>
-//         </div>
-
-
-//         <div className="center-div">
-//             <h1>نتائج الفحصر</h1>
-//             <div className="row m-auto table-head">
-//                 <div className="col-3 table-child">
-//                     <h3>العدد الاجمالى</h3>
-//                     <hr />
-//                     <p>{details.negative.length}</p>
-//                 </div>
-//                 <div className="col-3 table-child">
-//                     <h3>العدد الاجمالى</h3>
-//                     <hr />
-//                     <p>{details.suspect.length}</p>
-//                 </div>
-//                 <div className="col-3 table-child">
-//                     <h3>العدد الاجمالى</h3>
-//                     <hr />
-//                     <p>{details.positive.length}</p>
-//                 </div>
-//                 <div className="col-3 table-child">
-//                     <h3>العدد الاجمالى</h3>
-//                     <hr />
-//                     <p>{details.negative.length+details.suspect.length+details.positive.length}</p>
-//                 </div>
-//             </div>
-//         </div>
-
-//         <h2 style={{textAlign:"center"}}>تفاصيل الاختبار</h2>
-
-//         {details.negative.length>0&&<>
-//         <h3 className="right">NEGATIVE: السلبى</h3>
-//         <table className="ui celled table dark-border">
-//         <thead>
-//             <tr><th className="dark-border">S.N</th>
-//             <th className="dark-border">Microchip</th>
-//             <th className="dark-border">Neck</th>
-//             <th className="dark-border">Name</th>
-//             <th className="dark-border">BAPAT</th>
-//             <th className="dark-border">BCT</th>
-//             <th className="dark-border">cElisa</th>
-//             <th className="dark-border">JUDGEMENT</th>
-//         </tr></thead>
-//         <tbody>
-//         {
-//          details.negative.map((item,index)=><tr>
-//          <td className="dark-border" data-label="Name">{index+1}</td>
-//          <td className="dark-border" data-label="Age">{item.microchip}</td>
-//          <td className="dark-border" data-label="Job">{item.neck}</td>
-//          <td className="dark-border" data-label="Job"></td>
-//          <td className="dark-border" data-label="Job">{item.bapat.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.bct.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.celisa.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.judgement.toUpperCase()}</td>
-//          </tr>)   
-//         }
-//         </tbody>
-//         </table>
-//         </>}
-
-//         {details.positive.length>0&&<>
-//         <h3 className="right">POSITIVE: الايجابى</h3>
-//         <table className="ui celled table dark-border">
-//         <thead>
-//             <tr><th className="dark-border">S.N</th>
-//             <th className="dark-border">Microchip</th>
-//             <th className="dark-border">Neck</th>
-//             <th className="dark-border">Name</th>
-//             <th className="dark-border">BAPAT</th>
-//             <th className="dark-border">BCT</th>
-//             <th className="dark-border">cElisa</th>
-//             <th className="dark-border">JUDGEMENT</th>
-//         </tr></thead>
-//         <tbody>
-//         {
-//          details.positive.map((item,index)=><tr>
-//          <td className="dark-border" data-label="Name">{index+1}</td>
-//          <td className="dark-border" data-label="Age">{item.microchip}</td>
-//          <td className="dark-border" data-label="Job">{item.neck}</td>
-//          <td className="dark-border" data-label="Job"></td>
-//          <td className="dark-border" data-label="Job">{item.bapat.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.bct.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.celisa.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.judgement.toUpperCase()}</td>
-//          </tr>)   
-//         }
-//         </tbody>
-//         </table>
-//         </>}
-
-
-//         {details.suspect.length>0&&<>
-//         <h3 className="right">SUSPECT: المشتبه</h3>
-//         <table className="ui celled table dark-border">
-//         <thead>
-//             <tr><th className="dark-border">S.N</th>
-//             <th className="dark-border">Microchip</th>
-//             <th className="dark-border">Neck</th>
-//             <th className="dark-border">Name</th>
-//             <th className="dark-border">BAPAT</th>
-//             <th className="dark-border">BCT</th>
-//             <th className="dark-border">cElisa</th>
-//             <th className="dark-border">JUDGEMENT</th>
-//         </tr></thead>
-//         <tbody>
-//         {
-//          details.suspect.map((item,index)=><tr>
-//          <td className="dark-border" data-label="Name">{index+1}</td>
-//          <td className="dark-border" data-label="Age">{item.microchip}</td>
-//          <td className="dark-border" data-label="Job">{item.neck}</td>
-//          <td className="dark-border" data-label="Job"></td>
-//          <td className="dark-border" data-label="Job">{item.bapat.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.bct.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.celisa.toUpperCase()}</td>
-//          <td className="dark-border" data-label="Job">{item.judgement.toUpperCase()}</td>
-//          </tr>)   
-//         }
-//         </tbody>
-//         </table>
-//         </>}
-
-//         <div className="bottom-right-div">
-//         <p>
-//         طرق الاختبار 2016 له لد 0 ه 018
-//         - إسناد القياس: إسناد القياس طبقا للنظام الدولى لوحدات القياس باستخدام المعايرات والمواد المرجعية
-//         الظروف البينية: درجه الحراره22 +2درجه مئوية.
-//         </p>
-//         <h1>:ملاحظات</h1>
-//         <h3>المدير الفنى</h3>
-//         <p>- الفحوص المدونة خاصة بالعينات الواردة فقط وتم سحبها بمعرفة العميل و بياناتها علي مسئولية الجهة الراسلة للعينات
-//         لن يتم أعاده إصدار هذا التقرير الاكاملا وبطلب مكتوب بواسطة العميل</p>
-//         <p>-إي كشط ارتغيير في التقرير يعتبر لاغى واي صورة غير معتمدة من المعمل لا يعتد بها</p>
-//         <div className="row m-auto justify-content-end">
-//             <div className="col-3">
-//                 <p>:تحريرا فى</p>
-//             </div>
-//             <div className="col-3">
-//                 <p>:بواسطة</p>
-//             </div>
-//         </div>
-//         </div>
-    
-//         <h3>مدير المعمل</h3>
-//         <footer>
-//             <div className="row mx-2 my-auto">
-//                 <div className="col-4">
-//                 net.tharb@hanaa.dr
-//                 </div>
-//                 <div className="col-4">
-//                 تليفون: 77496289
-//                 </div>
-//                 <div className="col-4">
-//                 شارع دخان – مخرج 66 -منطقة ذرب – الدوحة – قطر
-//                 </div>
-//             </div>
-//             <div className="row mx-2 my-auto">
-//                 <div className="col-4">
-//                 1 عدد الصفحات: 1 من 
-//                 </div>
-//                 <div className="col-4">
-//                 تاريخ الاصدار: 2018/02/01
-//                 </div>
-//                 <div className="col-4">
-//                 الاصدار : 3
-//                 </div>
-//             </div>
-//         </footer>
-//     </div>
-//   )
-// }
-
-// export default ReportPdf
-
-import { DetailsTwoTone } from '@mui/icons-material';
 import React from 'react'
 import "./ReportPdf.scss"
 
@@ -255,64 +21,61 @@ function ReportPdf(props) {
             </div>
         </section>
 
-        <section className="report-number-parent">
-            <div className="report-number-child row m-auto align-items-center justify-content-around">
-                <div className="col-6 value">
+            <section className="report-number-parent">
+            <div className="report-number-child row m-auto align-items-center ">
+                <div className="col-5 value ">
                     <p>{details.reportNumber}</p>
                 </div>
-                <div className="col-6 key">
+                <div className="col-4 key ">
                     <p>
                      تقرير رقم
                     </p>
                 </div>
             </div>
 
-            <div className="report-number-child row m-auto align-items-center justify-content-around">
-                <div className="col-6 value">
+            <div className="report-number-child row m-auto align-items-center ">
+                <div className="col-5 value">
                     <p>{details.workOrder}</p>
                 </div>
-                <div className="col-6 key">
-                    <p>
-                     الرقم التشغيلي
-                    </p>
+                <div className="col-4 key">
+                    <p className='tashgili'>  الرقم التشغيلي</p>
                 </div>
             </div>
 
-            <div className="report-number-child row m-auto align-items-center justify-content-around">
-                <div className="col-6 value">
+            <div className="report-number-child row m-auto align-items-center">
+                <div className="col-5 value">
                     <p>{details.mainDate}</p>
                 </div>
-                <div className="col-6 key">
+                <div className="col-4 key">
                     <p>
                     تاريخ الردود
                     </p>
                 </div>
             </div>
         </section>
-
-        <section className="container-second">
+        <section className="third container-second">
         <div className="row m-auto justify-content-end">
                 <div className="mr-2">
-                    <p className="bold-text">{details.ownerName}</p>
+                <p className="bold-text"><span> {details.ownerName}</span> </p>
                 </div>
                 <div>
-                    <p className="bold-text">//السيد</p>
+                <p className="bold-text"><span> //السيد</span> </p>
                 </div>
             </div>
-            {/* <p className="bold-text"><span>{details.ownerName}</span> //السيد</p> */}
-            <p>
+
+        <p>         
                  <span className="">بفحص العينات الواردة الى معمل مستشفى ذرب للهجن بتاريخ</span>
                  <span className="bold-text mx-2">{details.mainDate}</span>
                  <span className="">و بياناتها كالتالى</span>
              </p>
              <div className="row m-auto justify-content-end">
-                <div className="col-4 key">
+             <div className="col-5 key colfive">
                     <p>دم:</p>
                     <p className="bold-text">{details.sampleQuantity}:</p>
                     <p>الكشف عن اجسام مناعية للبروسيل:</p>
                     <p>الميكروبيولوجى:</p>
                 </div>
-                <div className="col-2 value">
+                <div className="col-3 value">
                     <p className="bold-text">نوع العينات</p>
                     <p className="bold-text">عدد العینات</p>
                     <p className="bold-text">الفحص المطلوب</p>
@@ -322,33 +85,43 @@ function ReportPdf(props) {
         </section>
 
         <section className="container-fourth">
-        <h1 className='myclass'>نتائج الفحص</h1>
-        <div className="row mt-5 mx-auto justify-content-center">
+        <h1>نتائج الفحص</h1>
+        <div className="row  mx-auto justify-content-center">
             <div className="col-2 heading">              
-                <h3>السلبى</h3>
+            <h2>السلبى</h2>
             </div>
             <div className="col-2 heading">
-                <h3>المشتبه</h3>
+            <h2>المشتبه</h2>
             </div>
             <div className="col-2 heading">
-                <h3>الايجابى</h3>
+            <h2>الايجابى</h2>
             </div>
             <div className="col-2 heading">
-                <h3>العدد الاجمالى</h3>
+            <h2>بدون دم</h2>
             </div>
+            <div className="col-2 heading">
+            <h2>العدد الاجمالى</h2>
+            </div>
+     
         </div>
         <div className="row m-auto justify-content-center row2">
             <div className="col-2 heading-value">
-                <h3>{details.negative.length}</h3>              
+                <h2>{details.negative.length}</h2>              
             </div>
             <div className="col-2 heading-value">
-            <h3>{details.suspect.length}</h3>
+            <h2>{details.suspect.length}</h2>
             </div>
             <div className="col-2 heading-value">
-            <h3>{details.positive.length}</h3>
+            <h2>{details.positive.length}</h2>
             </div>
             <div className="col-2 heading-value">
-            <h3>{details.negative.length+details.suspect.length+details.positive.length}</h3>
+
+            <h2>{details.noBlood.length}</h2>
+            </div>
+            <div className="col-2 heading-value">
+            <h2>{details.negative.length+details.suspect.length+details.positive.length+details.noBlood.length}</h2>
+
+
             </div>
         </div>
         </section>
@@ -394,7 +167,7 @@ function ReportPdf(props) {
             }
         </section> */}
        {details.negative.length>0&&<>
-         <h3 className="right">NEGATIVE: السلبى</h3>
+         <h2 className="right">NEGATIVE: السلبى</h2>
          <table className="ui celled table dark-border">
          <thead>
              <tr><th className="dark-border">S.N</th>
@@ -418,13 +191,15 @@ function ReportPdf(props) {
           {details.negative[0].celisa.length>0&&<td className="dark-border" data-label="Job">{item.celisa.toUpperCase()}</td>}
           <td className="dark-border" data-label="Job">{item.judgement.toUpperCase()}</td>
           </tr>)   
-         }
+         }   
          </tbody>
+       
          </table>
+        
          </>}
 
          {details.positive.length>0&&<>
-         <h3 className="right">POSITIVE: المشتبه</h3>
+         <h2 className="right">POSITIVE:  الايجابى</h2>
          <table className="ui celled table dark-border">
          <thead>
              <tr><th className="dark-border">S.N</th>
@@ -451,11 +226,12 @@ function ReportPdf(props) {
          }
          </tbody>
          </table>
+        
          </>}
 
 
          {details.suspect.length>0&&<>
-         <h3 className="right">SUSPECT: الايجابى</h3>
+         <h2 className="right">SUSPECT: المشتبه</h2>
          <table className="ui celled table dark-border">
          <thead>
              <tr><th className="dark-border">S.N</th>
@@ -482,9 +258,73 @@ function ReportPdf(props) {
          }
          </tbody>
          </table>
+        
+         </>}
+         {/* {details.noBlood.length>0&&<>
+         <h3 className="right">No Blood: الايجابى</h3>
+         <table className="ui celled table dark-border">
+         <thead>
+             <tr><th className="dark-border">S.N</th>
+             <th className="dark-border">Microchip</th>
+             <th className="dark-border">Neck</th>
+             <th className="dark-border">Name</th>
+             {details.noBlood[0].bapat.length>0&&<th className="dark-border">BAPAT</th>}
+             {details.noBlood[0].bct.length>0&&<th className="dark-border">BCT</th>}
+             {details.noBlood[0].celisa.length>0&&<th className="dark-border">cElisa</th>}
+             <th className="dark-border">JUDGEMENT</th>
+         </tr></thead>
+         <tbody>
+         {
+          details.noBlood.map((item,index)=><tr>
+          <td className="dark-border" data-label="Name">{index+1}</td>
+          <td className="dark-border" data-label="Age">{item.microchip}</td>
+          <td className="dark-border" data-label="Job">{item.neck}</td>
+          <td className="dark-border" data-label="Job"></td>
+          {details.noBlood[0].bapat.length>0&&<td className="dark-border" data-label="Job">{item.bapat.toUpperCase()}</td>}
+          {details.noBlood[0].bct.length>0&&<td className="dark-border" data-label="Job">{item.bct.toUpperCase()}</td>}
+          {details.noBlood[0].celisa.length>0&&<td className="dark-border" data-label="Job">{item.celisa.toUpperCase()}</td>}
+          <td className="dark-border" data-label="Job">{item.judgement.toUpperCase()}</td>
+          </tr>)   
+         }
+         </tbody>
+         </table>
+         </>} */}
+
+
+         {details.noBlood.length>0&&<>
+         <h3 className="right">No Blood: بدون دم</h3>
+         <table className="ui celled table dark-border">
+         <thead>
+             <tr><th className="dark-border">S.N</th>
+             <th className="dark-border">Microchip</th>
+             <th className="dark-border">Neck</th>
+             <th className="dark-border">Name</th>
+             {details.noBlood[0].bapat.length>0&&<th className="dark-border">BAPAT</th>}
+             {details.noBlood[0].bct.length>0&&<th className="dark-border">BCT</th>}
+             {details.noBlood[0].celisa.length>0&&<th className="dark-border">cElisa</th>}
+             <th className="dark-border">JUDGEMENT</th>
+         </tr></thead>
+         <tbody>
+         {
+          details.noBlood.map((item,index)=><tr>
+          <td className="dark-border" data-label="Name">{index+1}</td>
+          <td className="dark-border" data-label="Age">{item.microchip}</td>
+          <td className="dark-border" data-label="Job">{item.neck}</td>
+          <td className="dark-border" data-label="Job"></td>
+          {details.noBlood[0].bapat.length>0&&<td className="dark-border" data-label="Job">{item.bapat.toUpperCase()}</td>}
+          {details.noBlood[0].bct.length>0&&<td className="dark-border" data-label="Job">{item.bct.toUpperCase()}</td>}
+          {details.noBlood[0].celisa.length>0&&<td className="dark-border" data-label="Job">{item.celisa.toUpperCase()}</td>}
+          <td className="dark-border" data-label="Job">{item.judgement.toUpperCase()}</td>
+          </tr>)   
+         }
+         </tbody>
+         </table>
          </>}
 
+
+
          <section className="container-sixth">
+         <p className='note'> Note:-Mean Optical density &gt;  30 "POSITIVE" &lt; 30 "NEGATIVE"</p>
             <p>OIE manual of terrestrial animals 2016 طرق الاختبار -</p>
             <p>­ إسناد القیاس: إسناد القیاس طبقا للنظام الدولي لوحدات القیاس باستخدام المعایرات والمواد المرجعیة
             </p>
