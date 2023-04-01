@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.ceacf323.chunk.css",
-    "main.js": "/static/js/main.9242a287.chunk.js",
-    "main.js.map": "/static/js/main.9242a287.chunk.js.map",
+    "main.js": "/static/js/main.bfc3f251.chunk.js",
+    "main.js.map": "/static/js/main.bfc3f251.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3eb803d4.js",
     "runtime-main.js.map": "/static/js/runtime-main.3eb803d4.js.map",
-    "static/js/2.803ad4b9.chunk.js": "/static/js/2.803ad4b9.chunk.js",
-    "static/js/2.803ad4b9.chunk.js.map": "/static/js/2.803ad4b9.chunk.js.map",
+    "static/js/2.10469989.chunk.js": "/static/js/2.10469989.chunk.js",
+    "static/js/2.10469989.chunk.js.map": "/static/js/2.10469989.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.ceacf323.chunk.css.map": "/static/css/main.ceacf323.chunk.css.map",
-    "static/js/2.803ad4b9.chunk.js.LICENSE.txt": "/static/js/2.803ad4b9.chunk.js.LICENSE.txt",
+    "static/js/2.10469989.chunk.js.LICENSE.txt": "/static/js/2.10469989.chunk.js.LICENSE.txt",
     "static/media/Home.scss": "/static/media/tharbback.81a2b294.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3eb803d4.js",
-    "static/js/2.803ad4b9.chunk.js",
+    "static/js/2.10469989.chunk.js",
     "static/css/main.ceacf323.chunk.css",
-    "static/js/main.9242a287.chunk.js"
+    "static/js/main.bfc3f251.chunk.js"
   ]
 }
