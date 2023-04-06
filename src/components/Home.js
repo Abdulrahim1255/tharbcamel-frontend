@@ -10,6 +10,9 @@ function Home(props) {
            <p className="sub-head">LogIn to Access Data Entry Mode</p>
            <Button onClick={()=>props.history.push("/tharbprojectgr")} className="m-3" sx={{fontSize:18}} variant="contained">Breeding farm project</Button>
            <Button onClick={()=>props.history.push("/generatereport")} className="m-3" sx={{fontSize:18}} variant="outlined">Tharb Hospital</Button>
+           <br/>
+        <Link to ="ProjcetData"> <Button  className="m-3" sx={{fontSize:18}} variant="contained">Project  Data</Button></Link>  
+        <Link to ="HospitalData"> <Button  className="m-3" sx={{fontSize:18}} variant="outlined">Hospital  Data</Button></Link> 
            <div style={{textAlign:"center"}}>
                 <Link to="/olduploads">View Old Data</Link>
            </div>

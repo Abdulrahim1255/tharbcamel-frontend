@@ -12,6 +12,8 @@ import Reportproject from './components/ReportPdf/Reportproject';
 import PreviousReportsProject from './components/PreviousReports/PreviousReportsProject'
 import SignUp from './components/SignIn/SignUp';
 import OldUploads from './components/OldUploads';
+import ProjcetData from './components/Data/ProjcetData';
+import HospitalData from './components/Data/HospitalData';
 
 function App(props) {
   return (
@@ -27,6 +29,8 @@ function App(props) {
       <Route path="/tharbprojectgr" component={TharbProjectGR} />
       <Route path="/reportproject" component={Reportproject} />
       <Route path="/olduploads" component={OldUploads} />
+      <Route path="/ProjcetData" component={ProjcetData} />
+      <Route path="/HospitalData" component={HospitalData} />
     </Switch>:
     <Switch>
     <Route exact path="/" component={SignIn} />
